@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #02030a;
+    font-family: Arial, sans-serif;
+}
+
+.night {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #120b24 0%,
+            #070713 35%,
+            #02030a 75%
+        );
+
+    overflow: hidden;
+}
+
+/* =========================
+   PLANTA COMPLETA
+========================= */
+
+.plant {
+    position: absolute;
+
+    left: 50%;
+    bottom: 8%;
+
+    width: 300px;
+    height: 650px;
+
+    transform: translateX(-50%);
+
+    animation: plantMove 4s ease-in-out infinite alternate;
+}
+
+@keyframes plantMove {
+
+    0% {
+        transform:
+            translateX(-50%)
+            rotate(-1deg);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            rotate(1deg);
+    }
+
+}
+
+
+/* =========================
+   FLOR
+========================= */
+
+.flower {
+    position: absolute;
+
+    top: 40px;
+    left: 50%;
+
+    width: 180px;
+    height: 180px;
+
+    transform: translateX(-50%);
+
+    animation: flowerGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes flowerGlow {
+
+    0% {
+        filter: brightness(1);
+        transform: translateX(-50%) scale(0.95);
+    }
+
+    100% {
+        filter: brightness(1.3);
+        transform: translateX(-50%) scale(1.05);
+    }
+
+}
+
+
+/* =========================
+   PÉTALOS
+========================= */
+
+.petal {
+
+    position: absolute;
+
+    width: 70px;
+    height: 105px;
+
+    left: 55px;
+    top: 5px;
+
+    background:
+        linear-gradient(
+            to top,
+            #ff5e00,
+            #ff8c00,
+            #ffd500
+        );
+
+    border-radius:
+        50% 50%
+        45% 45%
+        / 70% 70%
+        30% 30%;
+
+    transform-origin:
+        35px 85px;
+
+    box-shadow:
+        0 0 10px #ff6a00,
+        0 0 25px #ff8c00,
+        0 0 50px #ff4d00;
+
+}
+
+
+.petal1 {
+    transform: rotate(0deg);
+}
+
+.petal2 {
+    transform: rotate(60deg);
+}
+
+.petal3 {
+    transform: rotate(120deg);
+}
+
+.petal4 {
+    transform: rotate(180deg);
+}
+
+.petal5 {
+    transform: rotate(240deg);
+}
+
+.petal6 {
+    transform: rotate(300deg);
+}
+
+
+/* =========================
+   CENTRO
+========================= */
+
+.flower-center {
+
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    left: 62px;
+    top: 62px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff7a0,
+            #ffd000 40%,
+            #ff8c00 75%
+        );
+
+    z-index: 10;
+
+    box-shadow:
+        0 0 15px #fff06a,
+        0 0 35px #ff9d00,
+        0 0 70px #ff5e00;
+
+}
+
+
+/* =========================
+   TALLO
+========================= */
+
+.stem {
+
+    position: absolute;
+
+    top: 180px;
+    left: 50%;
+
+    width: 10px;
+    height: 400px;
+
+    transform: translateX(-50%);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            to right,
+            #4a1000,
+            #a83200,
+            #ff5a00,
+            #7a1d00
+        );
+
+    box-shadow:
+        0 0 8px #ff4d00,
+        0 0 20px #8a2500;
+
+    animation: growStem 2s ease-out;
+}
+
+@keyframes growStem {
+
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 400px;
+    }
+
+}
+
+
+/* =========================
+   HOJAS
+========================= */
+
+.leaf {
+
+    position: absolute;
+
+    width: 90px;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            to right,
+            #4a1000,
+            #a83200,
+            #ff6a00
+        );
+
+    box-shadow:
+        0 0 10px #ff4d00,
+        0 0 25px #7a1d00;
+
+}
+
+
+/* Hoja izquierda */
+
+.leaf1 {
+
+    top: 280px;
+    left: 65px;
+
+    border-radius:
+        100% 0
+        100% 0;
+
+    transform: rotate(25deg);
+
+}
+
+
+/* Hoja derecha */
+
+.leaf2 {
+
+    top: 340px;
+    right: 65px;
+
+    border-radius:
+        0 100%
+        0 100%;
+
+    transform: rotate(-25deg);
+
+}
+
+
+/* Hoja izquierda abajo */
+
+.leaf3 {
+
+    top: 410px;
+    left: 65px;
+
+    border-radius:
+        100% 0
+        100% 0;
+
+    transform: rotate(25deg);
+
+}
+
+
+/* Hoja derecha abajo */
+
+.leaf4 {
+
+    top: 470px;
+    right: 65px;
+
+    border-radius:
+        0 100%
+        0 100%;
+
+    transform: rotate(-25deg);
+
+}
+
+
+/* =========================
+   PASTO
+========================= */
+
+.grass {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 6px;
+    height: 110px;
+
+    border-radius: 100%;
+
+    background:
+        linear-gradient(
+            #7a1d00,
+            #ff4d00
+        );
+
+    box-shadow:
+        0 0 10px #ff4d00;
+
+    transform-origin: bottom;
+
+    animation:
+        grassMove 3s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.grass1 {
+
+    left: 55px;
+
+    transform: rotate(-25deg);
+
+}
+
+
+.grass2 {
+
+    left: 100px;
+
+    transform: rotate(-12deg);
+
+}
+
+
+.grass3 {
+
+    right: 100px;
+
+    transform: rotate(12deg);
+
+}
+
+
+.grass4 {
+
+    right: 55px;
+
+    transform: rotate(25deg);
+
+}
+
+
+@keyframes grassMove {
+
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+.particle {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: #ff8c00;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #ff6a00,
+        0 0 20px #ff8c00;
+
+    animation:
+        float 4s
+        infinite
+        ease-in-out;
+
+}
+
+
+.p1 {
+    left: 20%;
+    bottom: 25%;
+}
+
+.p2 {
+    right: 20%;
+    bottom: 30%;
+    animation-delay: 1s;
+}
+
+.p3 {
+    left: 30%;
+    top: 25%;
+    animation-delay: 2s;
+}
+
+.p4 {
+    right: 30%;
+    top: 40%;
+    animation-delay: 3s;
+}
+
+
+@keyframes float {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.5);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-100px)
+            scale(1.5);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE PARA CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .plant {
+
+        transform:
+            translateX(-50%)
+            scale(0.75);
+
+        transform-origin: bottom center;
+
+    }
+
+}
